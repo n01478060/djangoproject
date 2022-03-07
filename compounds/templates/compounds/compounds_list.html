@@ -1,0 +1,12 @@
+{% extends 'compounds/base.html' %}
+{% block content %}
+    {% for compound in compounds %}
+        <article class="post">
+            <time class="date">
+                published: {{ compound.published_date }}
+            </time>
+            <h2><a href="{% url 'compound_detail' pk=compound.pk %}">{{ compound.IUPAC_name }}</a></h2>
+            <p>{{ compound.CASRN }}</p>
+        </article>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>
+        <title>Cheminformatics Compounds</title>
+    </head>
+<header>
+    <h1><a href="/">Cheminformatics Compounds</a></h1>
+</header>
+<h2>Calculate Molecular Weight</h2>
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-secondary">Save</button>
+</form>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+        <title>Cheminformatics Compound Data</title>
+    </head>
+<header>
+    <h1><a href="/">Cheminformatics Compound Data</a></h1>
+</header>
+<article>
+    {% if compound.published_date %}
+        <time>
+            Created: {{ compound.published_date }}
+        </time>
+    {% endif %}
+    <h2>{{ compound.IUPAC_name }}</h2>
+    <p>CASRN: {{ compound.CASRN }}</p>
+    <p>SMILES: {{ compound.SMILES }}</p>
+    <p>InChI: {{ compound.InChI }}</p>
+    <p>InChIKey: {{ compound.InChIKey }}</p>
+    <h2><a href="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/{{ compound.SMILES }}/">PubChem</a></h2>
+    <p>Synonyms: </p>
+    <div style="padding-left: 2em">
+    <div style="height:220px;width:420px;padding-left: 1em;border:2px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+        {% for req in request %}
+            <p>{{ req }}</p>
+        {% endfor %}
+    </div>
+    </div>
+</article>
