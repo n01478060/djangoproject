@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<head>
-        <title>Cheminformatics Compound Data</title>
-    </head>
-<header>
-    <h1><a href="/">Cheminformatics Compound Data</a></h1>
-</header>
-<article>
+{% extends 'compounds/base.html' %}
+{% block content %}
     {% if compound.published_date %}
         <time>
             Created: {{ compound.published_date }}
@@ -25,4 +19,4 @@
         {% endfor %}
     </div>
     </div>
-</article>
+{% endblock %}

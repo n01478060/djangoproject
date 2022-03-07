@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<head>
-        <title>Cheminformatics Data</title>
-    </head>
-<header>
-    <h1><a href="/">Cheminformatics Data</a></h1>
-</header>
-<article>
-    {% if compound_data.published_date %}
-        <time>
-            Created: {{ compound_data.published_date }}
-        </time>
-    {% endif %}
-    <h2>{{ compound_data.IUPAC_name }}</h2>
-    <p>MOLECULAR WEIGHT: {{ compound_data.molecular_weight }}</p>
-    <p>BOILING POINT: {{ compound_data.boiling_point }}</p>
-    <p>MELTING POINT: {{ compound_data.melting_point }}</p>
-    <p>SOLUBILITY: {{ compound_data.solubility }}</p>
-    <p>DENSITY: {{ compound_data.density }}</p>
-</article>
+{% extends 'compounds/base.html' %}
+{% block content %}
+    <article>
+        {% if compound_data.published_date %}
+            <time>
+                Created: {{ compound_data.published_date }}
+            </time>
+        {% endif %}
+        <h2>{{ compound_data.IUPAC_name }}</h2>
+        <p>MOLECULAR WEIGHT: {{ compound_data.molecular_weight }}</p>
+        <p>BOILING POINT: {{ compound_data.boiling_point }}</p>
+        <p>MELTING POINT: {{ compound_data.melting_point }}</p>
+        <p>SOLUBILITY: {{ compound_data.solubility }}</p>
+        <p>DENSITY: {{ compound_data.density }}</p>
+    </article>
+{% endblock %}

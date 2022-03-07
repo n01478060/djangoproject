@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<head>
-        <title>Cheminformatics Compounds</title>
-    </head>
-<header>
-    <h1><a href="/">Cheminformatics Compounds</a></h1>
-</header>
-{% for compute in computed %}
-    <article>
-        <p>InChIKey: {{ compute.inchikey }}  |  Formula: {{ compute.molecular_formula }}  <br>
-            Calculated Molecular Weight: {{ compute.calculated_molecular_weight }} g/mol <br>
-            PubChem REST API Molecular Weight: {{ compute.pubchem_molecular_weight }} g/mol</p> <br>
-    </article>
-{% endfor %}
+{% extends 'compounds/base.html' %}
+{% block content %}
+    {% for compute in computed %}
+        <article>
+            <p>InChIKey: {{ compute.inchikey }}  |  Formula: {{ compute.molecular_formula }}  <br>
+                Calculated Molecular Weight: {{ compute.calculated_molecular_weight }} g/mol <br>
+                PubChem REST API Molecular Weight: {{ compute.pubchem_molecular_weight }} g/mol</p> <br>
+        </article>
+    {% endfor %}
+{% endblock %}
